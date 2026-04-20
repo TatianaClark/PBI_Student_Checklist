@@ -3,7 +3,7 @@ Created using **CLI - GitHub Copilot** ✨
 ## 🎯 Overview
 An interactive, feature-rich checklist application designed to help learners track their Power BI learning progress. This project includes a sleek user interface with real-time progress tracking and category-based organization.
 ---
-✨ Key Features
+**✨ Key Features**
 
 **🎬 Marquee Banner**
 - Animated scrolling header featuring your custom branding
@@ -17,7 +17,8 @@ Navigate seamlessly between all your checklists:
 - **🚀 GitHub Setup** - GitHub Pages setup guide
 - **🌐 Hosting** - Free hosting options
 
-📈 Progress Tracking**
+**📈 Progress Tracking**
+
 - **Real-time Progress Percentage** - Visual progress bar that updates as you complete items
 - **Sticky Progress Display** - Your completion status stays visible as you scroll
 - **Floating Progress Widget** - Fixed progress indicator showing percentage and items completed (e.g., "15/25")
