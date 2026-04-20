@@ -1,4 +1,4 @@
-## 🎓 Learning Path
+# 🎓 Learning Path
 
 This checklist represents a comprehensive Power BI learning curriculum covering:
 1. Foundational concepts and data modeling
