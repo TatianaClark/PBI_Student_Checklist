@@ -4,24 +4,25 @@ Created using **CLI - GitHub Copilot** ✨
 An interactive, feature-rich checklist application designed to help learners track their Power BI learning progress. This project includes a sleek user interface with real-time progress tracking and category-based organization.
 ---
 ✨ Key Features
-🎬 Marquee Banner
+**🎬 Marquee Banner**
 - Animated scrolling header featuring your custom branding
 - Eye-catching visual effects with logo and dynamic text
 - Continuous animation that cycles through your project title
-📱 Navigation Menu
+
+**📱 Navigation Menu**
 Navigate seamlessly between all your checklists:
 - **🏠 Home** - Return to the main hub
 - **📊 Power BI** - Power BI learning checklist
 - **🚀 GitHub Setup** - GitHub Pages setup guide
 - **🌐 Hosting** - Free hosting options
 
-📈 Progress Tracking
+📈 Progress Tracking**
 - **Real-time Progress Percentage** - Visual progress bar that updates as you complete items
 - **Sticky Progress Display** - Your completion status stays visible as you scroll
 - **Floating Progress Widget** - Fixed progress indicator showing percentage and items completed (e.g., "15/25")
 - **Completion Counter** - Track exactly how many items you've finished
 
-✅ Categories Checkbox System
+**✅ Categories Checkbox System**
 Four organized learning categories with smart tracking:
 1. **📚 Core Concepts** - DAX, Power Query, Data Modeling, Relationships, Measures
 2. **📊 Visualizations** - Charts, Maps, KPIs, Tables, and more
@@ -30,20 +31,19 @@ Four organized learning categories with smart tracking:
 
 Each category auto-completes with a ✅ checkmark when all items in that category are finished!
 
-🎉 Special Effects
+**🎉 Special Effects**
 - **Confetti Animation** - Celebrate when you complete entire categories!
 - **Smooth Hover Animations** - Interactive feedback on checklist items
 - **Pulsing Badge Effects** - Animated progress indicators
 - **Gradient Styling** - Beautiful purple and blue gradient themes
 
-💾 Smart Features
+**💾 Smart Features**
 - **Local Storage** - Your progress is automatically saved and persists between sessions
 - **Reset Functionality** - Clear all progress with a single click (with confirmation)
 - **Responsive Design** - Works beautifully on desktop and mobile devices
 
 ---
-
-📋 Checklist Sections
+**📋 Checklist Sections**
 
 ### Core Concepts (5 items)
 - DAX (Data Analysis Expressions)
