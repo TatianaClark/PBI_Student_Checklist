@@ -4,6 +4,7 @@ Created using **CLI - GitHub Copilot** ✨
 An interactive, feature-rich checklist application designed to help learners track their Power BI learning progress. This project includes a sleek user interface with real-time progress tracking and category-based organization.
 ---
 ✨ Key Features
+
 **🎬 Marquee Banner**
 - Animated scrolling header featuring your custom branding
 - Eye-catching visual effects with logo and dynamic text
