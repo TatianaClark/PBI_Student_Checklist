@@ -1,9 +1,9 @@
 # 🎓 Learning Path
-## This checklist represents a comprehensive Power BI learning curriculum covering:
-## 1. Foundational concepts and data modeling
-## 2. Visual storytelling techniques
-## 3. Advanced optimization and security
-## 4. Production deployment and collaboration
+This checklist represents a comprehensive Power BI learning curriculum covering:
+1. Foundational concepts and data modeling
+2. Visual storytelling techniques
+3. Advanced optimization and security
+4. Production deployment and collaboration
 
 ## Perfect for beginners, intermediate learners, or anyone looking to brush up on their Power BI skills!
 
