@@ -1,282 +1,633 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Power BI Exam Checklist</title>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f4; color: #1a1a1a; padding: 2rem 1rem; }
-  .wrap { max-width: 800px; margin: 0 auto; }
-  h1 { font-size: 22px; font-weight: 500; margin-bottom: 1rem; }
-  .progress-bar { width: 100%; height: 8px; background: #e5e5e5; border-radius: 99px; overflow: hidden; margin-bottom: .5rem; }
-  .progress-fill { height: 100%; background: #1D9E75; border-radius: 99px; transition: width .3s ease; width: 0%; }
-  .completion-text { font-size: 13px; color: #666; margin-bottom: 1.5rem; }
-  .section { margin-bottom: 1.25rem; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; background: #fff; }
-  .section-header { display: flex; align-items: center; justify-content: space-between; padding: .75rem 1rem; background: #f9f9f8; cursor: pointer; user-select: none; }
-  .section-title { font-size: 15px; font-weight: 500; color: #1a1a1a; }
-  .section-pct { font-weight: 400; font-size: 13px; color: #888; }
-  .section-meta { display: flex; align-items: center; gap: 8px; }
-  .section-count { font-size: 12px; color: #888; }
-  .chevron { font-size: 11px; color: #888; transition: transform .2s; display: inline-block; }
-  .chevron.open { transform: rotate(180deg); }
-  .section-body { display: block; }
-  .subsection { padding: .75rem 1rem; border-top: 1px solid #ebebeb; }
-  .subsection-label { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .5rem; }
-  .checklist { list-style: none; }
-  .checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; border-bottom: 1px solid #f0f0f0; }
-  .checklist li:last-child { border-bottom: none; }
-  .checklist li label { font-size: 14px; color: #1a1a1a; line-height: 1.5; cursor: pointer; flex: 1; }
-  .checklist li input[type=checkbox] { margin-top: 3px; flex-shrink: 0; cursor: pointer; accent-color: #1D9E75; width: 15px; height: 15px; }
-  .checklist li.checked label { color: #aaa; text-decoration: line-through; }
-  .reset-btn { margin-top: .75rem; padding: 8px 16px; font-size: 13px; cursor: pointer; background: transparent; border: 1px solid #ccc; border-radius: 8px; color: #666; }
-  .reset-btn:hover { background: #f5f5f5; }
-
-  @media (prefers-color-scheme: dark) {
-    body { background: #1a1a1a; color: #e5e5e5; }
-    .section { background: #252525; border-color: #333; }
-    .section-header { background: #2e2e2e; }
-    .section-title { color: #e5e5e5; }
-    .subsection { border-top-color: #333; }
-    .checklist li { border-bottom-color: #2e2e2e; }
-    .checklist li label { color: #e5e5e5; }
-    .checklist li.checked label { color: #555; }
-    .progress-bar { background: #333; }
-    .reset-btn { border-color: #444; color: #aaa; }
-    .reset-btn:hover { background: #2e2e2e; }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Exam Prep Checklist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Navigation Menu */
+        nav {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            padding: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-brand {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-brand:hover {
+            opacity: 0.9;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 0;
+            flex-wrap: wrap;
+        }
+        
+        .nav-menu li {
+            margin: 0;
+        }
+        
+        .nav-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .nav-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-bottom-color: #FFD700;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .page-content {
+            padding: 0;
+        }
+        
+        /* Marquee Banner */
+        .marquee-container {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            padding: 20px 0;
+            overflow: hidden;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .marquee {
+            display: flex;
+            animation: scroll 45s linear infinite;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            white-space: nowrap;
+            color: #764ba2;
+            font-size: 1.4em;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .circle-badge {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #800080 0%, #600060 100%);
+            border: 4px solid #FFD700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            font-size: 1.2em;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: pulse-circle 3s ease-in-out infinite;
+            padding: 10px;
+        }
+        
+        @keyframes pulse-circle {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+            }
+            50% {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+            }
+        }
+        
+        .logo-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border: 3px solid #FFD700;
+            animation: pulse-glow 3s ease-in-out infinite;
+            max-width: 100%;
+            display: block;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+            }
+            50% {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.8));
+            }
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(128, 0, 128, 0.1);
+        }
+        
+        h1 {
+            color: #800080;
+            font-weight: bold;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #800080;
+            font-weight: bold;
+            font-size: 1.8em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #800080;
+            padding-bottom: 10px;
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 12px;
+            margin: 8px 0;
+            background-color: #f9f9f9;
+            border-left: 4px solid #800080;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .checklist li:hover {
+            background-color: #ede7f6;
+            transform: translateX(5px);
+        }
+        
+        .checklist input[type="checkbox"] {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #800080;
+        }
+        
+        .checklist li.completed {
+            opacity: 0.6;
+            text-decoration: line-through;
+        }
+        
+        .progress-bar {
+            background-color: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            margin: 30px 0;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .completion-text {
+            text-align: center;
+            color: #800080;
+            font-weight: bold;
+            margin-top: 10px;
+            position: sticky;
+            top: 8px;
+            z-index: 999;
+            background-color: white;
+            padding: 5px 0;
+        }
+        
+        .reset-btn {
+            display: block;
+            margin: 40px auto 20px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+        }
+        
+        .reset-btn:hover {
+            background: linear-gradient(135deg, #5568d3 0%, #653a8a 100%);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+        }
+        
+        .reset-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .floating-progress {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            min-width: 150px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .floating-progress .progress-title {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+        
+        .floating-progress .progress-percentage {
+            font-size: 2.5em;
+            margin-bottom: 8px;
+        }
+        
+        .floating-progress .progress-items {
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+        
+        .floating-categories {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            min-width: 200px;
+        }
+        
+        .categories-title {
+            font-size: 0.95em;
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .category-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 6px;
+            background-color: #f8f7ff;
+            transition: all 0.3s ease;
+        }
+        
+        .category-item.completed {
+            background-color: #d4edda;
+        }
+        
+        .category-checkbox {
+            font-size: 1.5em;
+            min-width: 25px;
+            text-align: center;
+        }
+        
+        .category-name {
+            font-size: 0.9em;
+            color: #333;
+            flex: 1;
+        }
+        
+        .category-item.completed .category-name {
+            color: #155724;
+            text-decoration: line-through;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #ffd700;
+            pointer-events: none;
+            z-index: 2000;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotateZ(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(500px) rotateZ(720deg);
+                opacity: 0;
+            }
+        }
+        
+        .confetti.animate {
+            animation: confetti-fall 3s ease-in forwards;
+        }
+    </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>Power BI Exam Checklist</h1>
-  <div class="progress-bar"><div class="progress-fill" id="pFill"></div></div>
-  <div class="completion-text" id="pText">0% complete</div>
-  <div id="sectionsRoot"></div>
-  <button class="reset-btn" id="resetBtn">Reset progress</button>
-</div>
+    <!-- Floating Progress Widget -->
+    <div class="floating-progress" id="floatingProgress">
+        <div class="progress-title">📚 Exam Progress</div>
+        <div class="progress-percentage" id="floatingPercentage">0%</div>
+        <div class="progress-items" id="floatingItems">0/20</div>
+    </div>
+    
+    <!-- Floating Categories Widget -->
+    <div class="floating-categories" id="floatingCategories">
+        <div class="categories-title">📖 Topics</div>
+        <div class="category-item" data-category="exam-fundamentals">
+            <div class="category-checkbox" id="cat-exam-fundamentals">☐</div>
+            <div class="category-name">Fundamentals</div>
+        </div>
+        <div class="category-item" data-category="exam-queries">
+            <div class="category-checkbox" id="cat-exam-queries">☐</div>
+            <div class="category-name">DAX & Queries</div>
+        </div>
+        <div class="category-item" data-category="exam-visuals">
+            <div class="category-checkbox" id="cat-exam-visuals">☐</div>
+            <div class="category-name">Visualizations</div>
+        </div>
+        <div class="category-item" data-category="exam-deployment">
+            <div class="category-checkbox" id="cat-exam-deployment">☐</div>
+            <div class="category-name">Deployment</div>
+        </div>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="nav-container">
+            <a href="./" class="nav-brand">📚 Checklists Hub</a>
+            <ul class="nav-menu">
+                <li><a href="./">🏠 Home</a></li>
+                <li><a href="power_bi_checklist.html">📊 Power BI</a></li>
+                <li><a href="examprep_checklist.html">🚀 Exam Prep</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<script>
-const DATA = [
-  {
-    id:"s1", label:"Section 1: Prepare the data", pct:"25–30%",
-    groups:[
-      {label:"Get or connect to data", items:[
-        "Identify and connect to data sources or a shared semantic model",
-        "Change data source settings, including credentials and privacy levels",
-        "Choose between DirectQuery and Import",
-        "Create and modify parameters"
-      ]},
-      {label:"Profile and clean the data", items:[
-        "Evaluate data, including data statistics and column properties",
-        "Resolve inconsistencies, unexpected or null values, and data quality issues",
-        "Resolve data import errors"
-      ]},
-      {label:"Transform and load the data", items:[
-        "Select appropriate column data types",
-        "Create and transform columns",
-        "Group and aggregate rows",
-        "Pivot, unpivot, and transpose data",
-        "Convert semi-structured data to a table",
-        "Create fact tables and dimension tables",
-        "Identify when to use reference or duplicate queries and the resulting impact",
-        "Merge and append queries",
-        "Identify and create appropriate keys for relationships",
-        "Configure data loading for queries"
-      ]}
-    ]
-  },
-  {
-    id:"s2", label:"Section 2: Model the data", pct:"25–30%",
-    groups:[
-      {label:"Design and implement a data model", items:[
-        "Configure table and column properties",
-        "Implement role-playing dimensions",
-        "Define a relationship's cardinality and cross-filter direction",
-        "Create a common date table",
-        "Identify use cases for calculated columns and calculated tables"
-      ]},
-      {label:"Create model calculations using DAX", items:[
-        "Create single aggregation measures",
-        "Use the CALCULATE function",
-        "Implement time intelligence measures",
-        "Use basic statistical functions",
-        "Create semi-additive measures",
-        "Create a measure by using quick measures",
-        "Create calculated tables or columns",
-        "Create calculation groups"
-      ]},
-      {label:"Optimize model performance", items:[
-        "Improve performance by identifying and removing unnecessary rows and columns",
-        "Identify poorly performing measures, relationships, and visuals using Performance Analyzer and DAX query view",
-        "Improve performance by reducing granularity"
-      ]}
-    ]
-  },
-  {
-    id:"s3", label:"Section 3: Visualize and analyze the data", pct:"25–30%",
-    groups:[
-      {label:"Create reports", items:[
-        "Select an appropriate visual",
-        "Format and configure visuals",
-        "Create a narrative visual with Copilot",
-        "Apply and customize a theme",
-        "Apply conditional formatting",
-        "Apply slicing and filtering",
-        "Use Copilot to create a new report page",
-        "Use Copilot to suggest content for a new report page",
-        "Configure the report page",
-        "Choose when to use a paginated report",
-        "Create visual calculations using DAX"
-      ]},
-      {label:"Enhance reports for usability and storytelling", items:[
-        "Configure bookmarks",
-        "Create custom tooltips",
-        "Edit and configure interactions between visuals",
-        "Configure navigation for a report",
-        "Apply sorting to visuals",
-        "Configure sync slicers",
-        "Group and layer visuals by using the Selection pane",
-        "Configure drill through navigation",
-        "Configure export settings",
-        "Design reports for mobile devices",
-        "Enable personalized visuals in a report",
-        "Design and configure Power BI reports for accessibility",
-        "Configure automatic page refresh"
-      ]},
-      {label:"Identify patterns and trends", items:[
-        "Use the Analyze feature in Power BI",
-        "Use grouping, binning, and clustering",
-        "Use AI visuals",
-        "Use reference lines, error bars, and forecasting",
-        "Detect outliers and anomalies",
-        "Use Copilot to summarize the underlying semantic model"
-      ]}
-    ]
-  },
-  {
-    id:"s4", label:"Section 4: Manage and secure Power BI", pct:"15–20%",
-    groups:[
-      {label:"Create and manage workspaces and assets", items:[
-        "Create and configure a workspace",
-        "Configure and update a workspace app",
-        "Publish, import, or update items in a workspace",
-        "Create dashboards",
-        "Choose a distribution method",
-        "Configure subscriptions and data alerts",
-        "Promote or certify Power BI content",
-        "Identify when a gateway is required",
-        "Configure a semantic model scheduled refresh"
-      ]},
-      {label:"Secure and govern Power BI items", items:[
-        "Assign workspace roles",
-        "Configure item-level access",
-        "Configure access to semantic models",
-        "Implement row-level security roles",
-        "Configure row-level security group membership",
-        "Apply sensitivity labels"
-      ]}
-    ]
-  }
-];
-
-const STORAGE_KEY = 'pbi_checklist_state';
-const state = {};
-DATA.forEach(s => s.groups.forEach(g => g.items.forEach(item => { state[item] = false; })));
-
-function loadState() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-    Object.keys(saved).forEach(k => { if (k in state) state[k] = saved[k]; });
-  } catch(e) {}
-}
-
-function saveState() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
-}
-
-function updateProgress() {
-  const all = Object.keys(state);
-  const done = all.filter(k => state[k]).length;
-  const pct = all.length ? Math.round(done / all.length * 100) : 0;
-  document.getElementById('pFill').style.width = pct + '%';
-  document.getElementById('pText').textContent = pct + '% complete (' + done + ' of ' + all.length + ' items)';
-}
-
-function updateSectionCount(sectionEl, sectionData) {
-  const items = sectionData.groups.flatMap(g => g.items);
-  const done = items.filter(i => state[i]).length;
-  sectionEl.querySelector('.section-count').textContent = done + '/' + items.length;
-}
-
-function render() {
-  const root = document.getElementById('sectionsRoot');
-  root.innerHTML = '';
-  DATA.forEach(sec => {
-    const div = document.createElement('div');
-    div.className = 'section';
-
-    const header = document.createElement('div');
-    header.className = 'section-header';
-    header.innerHTML = `<span class="section-title">${sec.label} <span class="section-pct">(${sec.pct})</span></span><span class="section-meta"><span class="section-count">0/0</span><span class="chevron open">&#9660;</span></span>`;
-
-    const body = document.createElement('div');
-    body.className = 'section-body';
-
-    sec.groups.forEach(g => {
-      const sub = document.createElement('div');
-      sub.className = 'subsection';
-      sub.innerHTML = `<div class="subsection-label">${g.label}</div>`;
-      const ul = document.createElement('ul');
-      ul.className = 'checklist';
-      g.items.forEach(item => {
-        const li = document.createElement('li');
-        if (state[item]) li.classList.add('checked');
-        const cb = document.createElement('input');
-        cb.type = 'checkbox';
-        cb.checked = state[item];
-        cb.addEventListener('change', () => {
-          state[item] = cb.checked;
-          li.classList.toggle('checked', cb.checked);
-          updateSectionCount(div, sec);
-          updateProgress();
-          saveState();
+    <!-- Marquee with Logo -->
+    <div class="marquee-container">
+        <div class="marquee">
+            <div class="marquee-item">
+                <img src="PowerBI_Superhero.png" alt="Tatiana Logo" class="logo-image" />
+                <span>✨ Power BI Exam Prep ✨</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-content">
+        <div class="container">
+            <h1>🎓 Power BI Exam Prep Checklist</h1>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="completion-text" id="completionText">0% Complete</div>
+            
+            <h2>Exam Fundamentals</h2>
+            <ul class="checklist" data-category="exam-fundamentals">
+                <li><input type="checkbox"> Understand Power BI Architecture</li>
+                <li><input type="checkbox"> Data Sources & Connections</li>
+                <li><input type="checkbox"> Power Query Transformations</li>
+                <li><input type="checkbox"> Data Model Best Practices</li>
+                <li><input type="checkbox"> Star Schema Design</li>
+            </ul>
+            
+            <h2>DAX & Queries</h2>
+            <ul class="checklist" data-category="exam-queries">
+                <li><input type="checkbox"> DAX Functions (CALCULATE, FILTER, etc)</li>
+                <li><input type="checkbox"> Context Transition</li>
+                <li><input type="checkbox"> Implicit vs Explicit Measures</li>
+                <li><input type="checkbox"> Row Context & Filter Context</li>
+                <li><input type="checkbox"> Time Intelligence (YTD, YoY)</li>
+            </ul>
+            
+            <h2>Visualizations & Reports</h2>
+            <ul class="checklist" data-category="exam-visuals">
+                <li><input type="checkbox"> Chart Types & Use Cases</li>
+                <li><input type="checkbox"> Slicers & Filters</li>
+                <li><input type="checkbox"> Drill-through & Bookmarks</li>
+                <li><input type="checkbox"> Report Navigation</li>
+                <li><input type="checkbox"> Performance Optimization</li>
+            </ul>
+            
+            <h2>Deployment & Security</h2>
+            <ul class="checklist" data-category="exam-deployment">
+                <li><input type="checkbox"> Workspace Management</li>
+                <li><input type="checkbox"> Row-Level Security (RLS)</li>
+                <li><input type="checkbox"> Refresh & Schedules</li>
+                <li><input type="checkbox"> Apps & Sharing</li>
+                <li><input type="checkbox"> Administration & Gateway</li>
+            </ul>
+            
+            <button id="resetBtn" class="reset-btn">🔄 Reset Progress</button>
+        </div>
+    </div>
+    
+    <script>
+        const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+        const categories = ['exam-fundamentals', 'exam-queries', 'exam-visuals', 'exam-deployment'];
+        const completedCategories = new Set();
+        
+        console.log('Total checkboxes found:', checkboxes.length);
+        
+        function getCheckboxesByCategory(category) {
+            const checklist = document.querySelector(`ul[data-category="${category}"]`);
+            if (!checklist) {
+                console.log('No checklist found for category:', category);
+                return [];
+            }
+            const items = checklist.querySelectorAll('input[type="checkbox"]');
+            console.log(`Category ${category} has ${items.length} items`);
+            return items;
+        }
+        
+        function isCategoryComplete(category) {
+            const categoryCheckboxes = getCheckboxesByCategory(category);
+            if (categoryCheckboxes.length === 0) return false;
+            const complete = Array.from(categoryCheckboxes).every(cb => cb.checked);
+            console.log(`Category ${category} complete:`, complete);
+            return complete;
+        }
+        
+        function createConfetti() {
+            console.log('Creating confetti!');
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.top = Math.random() * (window.innerHeight * 0.3) + 'px';
+                const colors = ['#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1', '#95e1d3', '#f38181'];
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = (Math.random() * 10 + 8) + 'px';
+                confetti.style.height = confetti.style.width;
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.classList.add('animate');
+                }, 10);
+                
+                setTimeout(() => confetti.remove(), 3200);
+            }
+        }
+        
+        function updateProgress() {
+            const completed = Array.from(checkboxes).filter(cb => cb.checked).length;
+            const total = checkboxes.length;
+            const percentage = Math.round((completed / total) * 100);
+            
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('completionText').textContent = percentage + '% Complete';
+            
+            // Update floating widget
+            document.getElementById('floatingPercentage').textContent = percentage + '%';
+            document.getElementById('floatingItems').textContent = completed + '/' + total;
+            
+            // Update categories
+            categories.forEach(category => {
+                const wasComplete = completedCategories.has(category);
+                const isComplete = isCategoryComplete(category);
+                
+                const categoryItem = document.querySelector(`.category-item[data-category="${category}"]`);
+                const checkmark = document.getElementById(`cat-${category}`);
+                
+                if (!categoryItem || !checkmark) {
+                    console.log('Missing elements for category:', category);
+                    return;
+                }
+                
+                if (isComplete) {
+                    categoryItem.classList.add('completed');
+                    checkmark.textContent = '✅';
+                    
+                    if (!wasComplete) {
+                        completedCategories.add(category);
+                        console.log('Category ' + category + ' completed! Triggering confetti...');
+                        createConfetti();
+                    }
+                } else {
+                    categoryItem.classList.remove('completed');
+                    checkmark.textContent = '☐';
+                    completedCategories.delete(category);
+                }
+            });
+        }
+        
+        checkboxes.forEach((checkbox, index) => {
+            checkbox.addEventListener('change', function() {
+                this.closest('li').classList.toggle('completed');
+                console.log(`Checkbox ${index} changed to:`, this.checked);
+                updateProgress();
+            });
         });
-        const lbl = document.createElement('label');
-        lbl.textContent = item;
-        lbl.addEventListener('click', () => { cb.click(); });
-        li.appendChild(cb);
-        li.appendChild(lbl);
-        ul.appendChild(li);
-      });
-      sub.appendChild(ul);
-      body.appendChild(sub);
-    });
-
-    header.addEventListener('click', () => {
-      const open = body.style.display !== 'none';
-      body.style.display = open ? 'none' : 'block';
-      header.querySelector('.chevron').classList.toggle('open', !open);
-    });
-
-    div.appendChild(header);
-    div.appendChild(body);
-    root.appendChild(div);
-    updateSectionCount(div, sec);
-  });
-  updateProgress();
-}
-
-document.getElementById('resetBtn').addEventListener('click', () => {
-  if (confirm('Reset all progress?')) {
-    Object.keys(state).forEach(k => state[k] = false);
-    saveState();
-    render();
-  }
-});
-
-loadState();
-render();
-</script>
+        
+        // Load saved progress from localStorage
+        checkboxes.forEach((checkbox, index) => {
+            const saved = localStorage.getItem('exam-prep-checklist-' + index);
+            if (saved === 'true') {
+                checkbox.checked = true;
+                checkbox.closest('li').classList.add('completed');
+            }
+            
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem('exam-prep-checklist-' + index, this.checked);
+            });
+        });
+        
+        // Reset button functionality
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+                // Uncheck all boxes
+                checkboxes.forEach((checkbox, index) => {
+                    checkbox.checked = false;
+                    checkbox.closest('li').classList.remove('completed');
+                    localStorage.removeItem('exam-prep-checklist-' + index);
+                });
+                
+                // Reset categories
+                completedCategories.clear();
+                
+                // Update progress
+                updateProgress();
+                
+                console.log('Progress reset!');
+            }
+        });
+        
+        console.log('Initializing progress...');
+        updateProgress();
+    </script>
 </body>
 </html>
